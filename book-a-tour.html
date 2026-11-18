@@ -13,11 +13,11 @@
 <body>
   <header class="navigation-bar">
         <nav>
-       <a href="/index.html"><image class="nav-logo" src="images/SVG/white-text-logo.svg" alt="Pedal or Not text logo" /></a>
+       <a href="index.html"><image class="nav-logo" src="images/SVG/white-text-logo.svg" alt="Pedal or Not text logo" /></a>
          <ul class="nav-links">
-            <li><a href="/index.html">home</a></li>
-            <li><a href="/book-a-tour.html" aria-current="page">tours</a></li>
-            <li><a href="/contact-us.html">contact</a></li>
+            <li><a href="index.html">home</a></li>
+            <li><a href="book-a-tour.html" aria-current="page">tours</a></li>
+            <li><a href="contact-us.html">contact</a></li>
          </ul>
         </nav>
   </header>
@@ -68,42 +68,42 @@
 
     <div class="tour-reviews">
         <h2>Customer Reviews</h2>
-            <div class="customer-review-tour">
+            <div class="customer-review-tour" id="review-1">
                 <p class="review-rating" aria-label="5 out of 5 stars">★★★★★</p>
             <h4>Fun Tour!</h4>
                 <p class="customer-name">- Joe H., September 2026 | TripAdvisor</p>      
                 <p>"Very chill and fun tour. The e-bikes were a breeze to ride, and the beaches are absolutely beautiful."</p>
             </div>
                 
-            <div class="customer-review-tour">
+            <div class="customer-review-tour" id="review-2">
                 <p class="review-rating" aria-label="5 out of 5 stars">★★★★★</p>
             <h4>Great Guided Bike Tour</h4>
                 <p class="customer-name">- Colleen R., September 2026 | TripAdvisor</p>      
                 <p>"Great guided tour by bike. Carol's connections with locals made it extra special. I've been to Santa Monica and Venice before but this tour showed me sights and gave me information I've never seen or heard of before. A great experience to learn more about the area up close."</p>
             </div>
 
-            <div class="customer-review-tour">
+            <div class="customer-review-tour" id="review-3">
                 <p class="review-rating" aria-label="5 out of 5 stars">★★★★★</p>
             <h4>Great Day on the Beach</h4>
                 <p class="customer-name">- Angel A., August 2026 | TripAdvisor</p>      
                 <p>"Barb was kind, professional, and had lots of interesting bits of Hollywood trivia as well as thoughtful insights. I was solo that day and she helped make the expereience a perfect excursion."</p>
             </div>
 
-            <div class="customer-review-tour">
+            <div class="customer-review-tour additional-review" id="review-4" hidden>
                 <p class="review-rating" aria-label="5 out of 5 stars">★★★★★</p>
             <h4>Fantastic!</h4>
                 <p class="customer-name">- Troy E., August 2026 | TripAdvisor</p>      
                 <p>"Wonderful tour! Barbara was a great tour guide! Good bikes and equipment. Beautiful area to bike!"</p>
             </div>
 
-            <div class="customer-review-tour">
+            <div class="customer-review-tour additional-review" id="review-5" hidden>
                 <p class="review-rating" aria-label="5 out of 5 stars">★★★★★</p>
             <h4>Great Experience</h4>
                 <p class="customer-name">- Janet F., May 2026 | TripAdvisor</p>      
                 <p>"We had never been on ebikes before and found it very easy. The guide was knowledgeable and entertaining. The starting point is a little store on a side street with meter parking. There is a little riding on streets, especially through the venice canals. We were very lucky, nobody else signed up so our family had a private tour. Would definitely do it again."</p>
             </div>
 
-            <div class="customer-review-tour">
+            <div class="customer-review-tour additional-review" id="review-6" hidden>
                 <p class="review-rating" aria-label="5 out of 5 stars">★★★★★</p>
             <h4>Brilliant Tour of the Area</h4>
                 <p class="customer-name">- Rachel S., June 2025 | TripAdvisor</p>      
@@ -111,18 +111,18 @@
             </div>
             <div class="review-pagination">
                 <div class="see-more">
-                    <button>See More</button>
+                    <button onclick="seeMore()">See More</button>
                 </div>
                 <div class="see-less">
-                    <button>See Less</button>
+                    <button onclick="seeLess()">See Less</button>
                 </div>
             </div>
         </div>
     </div>
 
 <div class="booking-calendar">
-    <p>Starting at</p>
-    <h1>$65</h1>
+    <p class="starting">Starting at</p>
+    <h2 class="cost">$65 per person</h2>
         <div class="wrapper">
       <header>
         <p class="current-date"></p>
@@ -146,7 +146,9 @@
     </div>
     <p class="caption">Select a date to book a tour.</p>
     </div>
+     <button onclick="topFunction()" id="pgTOP" title="Go to top">^</button>
 </div>
+
 <div class="footer">
     <img class="round-logo-footer" src="images/SVG/pedal_or_not_round_logo.svg" alt="Round Pedal or Not logo" />
     <div class="footer-information">
@@ -154,6 +156,7 @@
         <p><a href="mailto:info@pedalornot.net">info@pedalornot.net</a></p>
         <p>(310) 971-1111</p>
         <p>214 Pier Ave, Santa Monica, CA 90405</p>
+        <p><a href="https://www.instagram.com/pedal_or_not?utm_source=ig_web_button_share_sheet&amp;exln=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">@pedal_or_not</a></p>
     </div>
   </div>
 

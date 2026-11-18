@@ -12,6 +12,7 @@
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
     color: #003e95;
+    line-height: 60px
 }
 
 h1{
@@ -87,6 +88,11 @@ line-height: 1.5;
 .contact-form textarea {
     display: block;
     width: 100%;
+    resize: vertical;
+}
+
+.contact-form textarea {
+    min-height: 200px;
 }
 
 .contact-form .form-message,
@@ -110,10 +116,6 @@ line-height: 1.5;
 }
 
 @media (max-width: 600px) {
-    .contact-form form {
-        grid-template-columns: repeat(12, minmax(0, 1fr));
-    }
-
     .contact-form .form-field {
         grid-column: 1 / -1;
     }
@@ -163,9 +165,6 @@ line-height: 1.5;
     grid-column: 1/-1;
 }
 
-.customer-review-homepage {
-    grid-column: 1/-1;
-}
 .customers-say {
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -181,9 +180,8 @@ line-height: 1.5;
     row-gap: 4px;
     background-color:#E4F4FF;
     padding: 28px;
-    align-items: center;
     border-radius: 28px;
-    
+    margin-bottom: 40px;
 }
 .customer-review-homepage .customer-name {
     font-size: 14px;
@@ -210,11 +208,24 @@ line-height: 1.5;
         grid-column: 1 / -1;
     }
 
+    .customer-review-homepage .customer-name {
+        padding: 4px;
+    }
+
+    .customer-review-homepage .review-rating {
+        line-height: 1.4;
+        font-size: 28px;
+    }
+
     .ebike-tour-text,
     .ebike-tour-copy,
     .ebike-tours > .round-logo1 {
         grid-column: 1 / -1;
         grid-row: auto;
+    }
+
+    .ebike-tour-copy h1 {
+        text-align: center;
     }
 }
 
@@ -237,12 +248,22 @@ line-height: 1.5;
     width: 100%;
     height: 100%;
     border: 0;
+    
 }
 
 .tour-page .tour-left {
     grid-column: col-start 1 / span 8;
     grid-row: 2;
     order: 2;
+}
+
+.tour-left h3,
+.tour-left h4 {
+  line-height: 28px;
+}
+
+.tour-left .customer-name {
+  line-height: 12px;
 }
 
 .tour-page .tour-left > div {
@@ -258,7 +279,6 @@ line-height: 1.5;
     aspect-ratio: 64 / 27;
     margin-left: calc(50% - 50vw);
     overflow: hidden;
-    grid-column: 1 / -1;
     min-height: 400px;
 }
 
@@ -385,6 +405,7 @@ line-height: 1.5;
 
 .tour-page li {
     margin-bottom: 8px;
+    line-height: 24px;
 }
 
 @media (max-width: 768px) {
@@ -392,6 +413,10 @@ line-height: 1.5;
     .tour-page .booking-calendar {
         grid-column: 1 / -1;
         grid-row: auto;
+    }
+
+    .tour-page .customer-review-tour .review-rating {
+        font-size: 36px;
     }
 }
 
@@ -416,7 +441,7 @@ nav a[aria-current="page"] {
 
 .navigation-bar a {
     text-decoration: none;
-    font-weight: semibold;
+    font-weight: 500;
   
 }
 
@@ -430,11 +455,6 @@ nav a[aria-current="page"] {
     color: #FFEA72;
     font-weight: bold;
     text-decoration: underline;
-}
-
-.nav-link a[aria-current="page"] {
-  text-decoration: underline;
-  font-weight: bold;
 }
 
 .navigation-bar nav {
@@ -456,11 +476,24 @@ nav a[aria-current="page"] {
 }
 
 .nav-logo {
-    width: 100%;
+    width: 160px;
     max-width: 160px;
     height: auto;
     margin: 0;
     flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .navigation-bar,
+    .navigation-bar nav,
+    .nav-links {
+        margin: 0;
+        padding: 8px;
+    }
+
+    .nav-links {
+        gap: 28px;
+    }
 }
 
 .hero-image {
@@ -469,7 +502,6 @@ nav a[aria-current="page"] {
   width: 100%;
   max-width: 100%;
   display: block;
-  align-items: left;
   margin: 0;
   overflow: hidden;
   position: relative;
@@ -506,8 +538,8 @@ nav a[aria-current="page"] {
 .hero-text h1 {
   font-family: 'Poppins Medium', sans-serif;
   font-size: 64px;
-  line-height: 1.1;
-  margin: 0 0 6px;
+  line-height: 1.7;
+  margin: 0;
 }
 
 .hero-text button {
@@ -515,6 +547,7 @@ nav a[aria-current="page"] {
   font-family: 'Montserrat semibold', sans-serif;
     color: #002066;
     background-color: #4CD5FF;
+
 }
 
 .hero-text button a {
@@ -534,6 +567,17 @@ nav a[aria-current="page"] {
   font-size: 21px;
   margin-top: 0;
 }
+
+@media (max-width: 768px) {
+    .hero-text h1 {
+        line-height: 1.2;
+    }
+
+    .hero-text p {
+        padding: 20px 0
+    }
+}
+
 
 .nav-links a {
     display: flex;
@@ -557,21 +601,17 @@ nav a[aria-current="page"] {
     margin: 0;
     font-size: 36px;
     line-height: 1;
-   color: #ffb914
+   color: #0038C6
 }
 
 .customer-review-tour {
-    margin-bottom: 24px;
-}
-
-.customer-review-homepage {
-    margin-bottom: 40px;
+    margin: 4px 0 24px;
 }
 
 .customer-review-tour .review-rating {
     margin: 0 0 4px;
-    font-size: 24px;
-    color: #ffb914;
+    font-size: 28px;
+    line-height: 36px;
 }
 
 .customer-review-tour h4 {
@@ -634,7 +674,7 @@ header:not(.navigation-bar) {
 
 .footer > img {
     width: 100%;
-    max-width: 175px;
+    max-width: 220px;
     height: auto;
     margin: 0;
     object-fit: cover;
@@ -650,8 +690,25 @@ header:not(.navigation-bar) {
     margin: 0 0 6px;
 }
 
+.footer-information h2 {
+    line-height: 40px;
+
+}
+
 .footer * {
     color: white;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+
+    .round-logo-footer {
+        width: 140%;
+    }
 }
 
 .gallery-image {
@@ -672,14 +729,11 @@ header:not(.navigation-bar) {
     width: 100vw;
     margin-left: calc(50% - 50vw);
     margin-top: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     padding: 10px 20px;
     overflow-x: auto;
     overflow-y: hidden;
     scroll-behavior: smooth;
-}
-
-.discover-images {
     scrollbar-width: thin;
     scrollbar-color: #004AAD transparent;
 }
@@ -746,11 +800,12 @@ img{
 
 .home-sand-surf-content h2 {
   margin: 0;
+  line-height: 40px;
 }
 
 .home-sand-surf-content p {
   margin: 0;
-  font-weight: medium;
+  font-weight: 500;
 }
 
 .home-sand-surf-content button {
@@ -805,23 +860,33 @@ button {
 }
 
 /* calendar styling */
+.booking-calendar .starting {
+    margin: 4px 0;
+}
+
+.booking-calendar .cost {
+    margin-bottom: 8px;
+}
+
 .booking-calendar .caption {
     text-align: end;
 }
 .book-tour-button {
     background-color: #4CD5FF;
 }
-*  .book-tour-button:hover {
+.book-tour-button:hover {
   background-color: #7DE1FF;
 }
 .book-tour-button:active {
     background-color: #9EE8FF;
 }
-.wrapper{
+.wrapper{   /*calendar itself*/
   width: 100%;
   max-width: 450px;
   background: #fff;
-  border-radius: 10px;
+  border-radius: 25px;
+  border: 1.2px solid #004AAD;
+  padding: 8px;
 }
 .wrapper header{
   position: relative;
@@ -851,11 +916,16 @@ button {
   user-select: none;
   border-radius: 50%;
   pointer-events: auto;
+  background-color: #E4F4FF;
 }
 .wrapper .icons span:hover{
-  background: transparent;
-  font-weight: 500;
+  background-color: #9EE8FF;
 }
+
+.wrapper .icons span:active {
+    background-color: #7DE1FF;
+}
+
 .wrapper header .current-date{ /*month year heading*/
   font-size: 28px;
   font-family: "Poppins semibold";
@@ -863,6 +933,11 @@ button {
   color: #004aad;
   margin: 0;
   text-align: center;
+}
+@media (max-width: 768px) {
+  .wrapper header .current-date {
+    font-size: clamp(18px, 4vw, 28px);
+  }
 }
 .calendar{
   padding: 20px 30px;
@@ -933,5 +1008,33 @@ button {
 }
 
 .days li:not(.inactive):not(.past):active::before{ /*selected date active*/
+    background-color: #9EE8FF;
+}
+
+#pgTOP {
+    border-radius: 50%;
+    color: #002066;
+    background-color: #4CD5FF;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 99;
+    font-size: 28px;
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    box-shadow: 0 4px 8px #002066b0;
+}
+
+#pgTOP:hover {
+    background-color: #7DE1FF;
+}
+
+#pgTOP:active {
     background-color: #9EE8FF;
 }

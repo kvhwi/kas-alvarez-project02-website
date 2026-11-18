@@ -1,3 +1,4 @@
+//contact form
 const contactForm = document.querySelector(".contact-form form");
 if (contactForm) {
     contactForm.addEventListener("submit", event => {
@@ -6,6 +7,7 @@ if (contactForm) {
     });
 }
 
+//calendar
 const daysTag = document.querySelector(".days"),
 currentDate = document.querySelector(".current-date"),
 prevNextIcon = document.querySelectorAll(".icons span");
@@ -107,3 +109,32 @@ prevNextIcon.forEach(icon => { // getting prev and next icons
         renderCalendar(); // calling renderCalendar function
     });
 });
+
+//scroll to top
+let mybutton = document.getElementById("pgTOP"); 
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() { 
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+function topFunction() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+//see more
+function seeMore() {
+  document.querySelectorAll(".additional-review").forEach(function (review) {
+    review.hidden = false;
+  });
+}
+
+//see less
+function seeLess() {
+  document.querySelectorAll(".additional-review").forEach(function (review) {
+    review.hidden = true;
+  });
+}
