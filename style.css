@@ -93,6 +93,7 @@ line-height: 1.5;
 
 .contact-form textarea {
     min-height: 200px;
+    max-height: 400px;
 }
 
 .contact-form .form-message,
@@ -280,6 +281,8 @@ line-height: 1.5;
     margin-left: calc(50% - 50vw);
     overflow: hidden;
     min-height: 400px;
+    pointer-events: none;
+
 }
 
 .tour-image img {
@@ -302,6 +305,8 @@ line-height: 1.5;
     margin-left: calc(50% - 50vw);
     overflow: hidden;
     margin-bottom: 40px;
+    pointer-events: none;
+
 }
 
 .contact-hero-image {
@@ -371,13 +376,10 @@ line-height: 1.5;
     margin-top: 24px;
 }
 
-.review-pagination .see-more {
-    grid-column: 1 / 7;
-}
-
+.review-pagination .see-more,
 .review-pagination .see-less {
-    grid-column: 7 / 13;
-    justify-self: end;
+    grid-column: 1 / 7;
+    justify-self: start;
 }
 .review-pagination button {
     background-color: transparent;
@@ -481,6 +483,7 @@ nav a[aria-current="page"] {
     height: auto;
     margin: 0;
     flex-shrink: 0;
+    display: block;
 }
 
 @media (max-width: 768px) {
@@ -505,6 +508,7 @@ nav a[aria-current="page"] {
   margin: 0;
   overflow: hidden;
   position: relative;
+
   
 }
 
@@ -721,6 +725,9 @@ header:not(.navigation-bar) {
     margin: 0;
 }
 
+ .image-1 .image-2 .image-3 .image-4 .image-5 .image-6 .image-7 img {
+    pointer-events: none;
+}
 
 .discover-images {
     display: flex;
@@ -736,6 +743,7 @@ header:not(.navigation-bar) {
     scroll-behavior: smooth;
     scrollbar-width: thin;
     scrollbar-color: #004AAD transparent;
+    pointer-events: auto;
 }
 
 .discover-images::-webkit-scrollbar {
@@ -959,8 +967,10 @@ button {
   font-size: 1.07rem;
 }
 .calendar .weeks li{
-  font-weight: 500;
   cursor: default;
+  color: #004AAD;
+  font-family: 'Montserrat medium';
+  font-weight: 500;
 }
 .calendar .days li{ /* dates on calendar*/
   z-index: 1;
@@ -1019,7 +1029,7 @@ button {
     height: 48px;
     padding: 0;
     box-sizing: border-box;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     cursor: pointer;

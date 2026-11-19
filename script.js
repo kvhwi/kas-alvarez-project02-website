@@ -12,6 +12,7 @@ const daysTag = document.querySelector(".days"),
 currentDate = document.querySelector(".current-date"),
 prevNextIcon = document.querySelectorAll(".icons span");
 
+if (daysTag && currentDate) {
 const selectedDayStyles = document.createElement("style");
 selectedDayStyles.textContent = `
     .days li.selected::before,
@@ -109,17 +110,18 @@ prevNextIcon.forEach(icon => { // getting prev and next icons
         renderCalendar(); // calling renderCalendar function
     });
 });
+}
 
 //scroll to top
-let mybutton = document.getElementById("pgTOP"); 
-window.onscroll = function() {scrollFunction()};
+const mybutton = document.getElementById("pgTOP");
+if (mybutton) {
+    window.addEventListener("scroll", scrollFunction);
+    scrollFunction();
+}
 
 function scrollFunction() { 
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
+    if (!mybutton) return;
+    mybutton.style.display = window.scrollY >= 20 ? "flex" : "none";
 }
 function topFunction() {
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -130,6 +132,8 @@ function seeMore() {
   document.querySelectorAll(".additional-review").forEach(function (review) {
     review.hidden = false;
   });
+  document.querySelector(".review-pagination .see-more").hidden = true;
+  document.querySelector(".review-pagination .see-less").hidden = false;
 }
 
 //see less
@@ -137,4 +141,6 @@ function seeLess() {
   document.querySelectorAll(".additional-review").forEach(function (review) {
     review.hidden = true;
   });
+  document.querySelector(".review-pagination .see-more").hidden = false;
+  document.querySelector(".review-pagination .see-less").hidden = true;
 }
